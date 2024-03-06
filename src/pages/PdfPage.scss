@@ -1,0 +1,78 @@
+.pdf-viewer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    overflow-y: auto; /* Allows vertical scrolling */
+    scrollbar-width: none; /* For Firefox */
+  
+
+    h1 {
+      border-radius: 5px;
+      padding: 10px 25px;
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3),
+        inset 0px 2px 1px rgba(255, 255, 255, 0.3),
+        inset 0px -2px 1px rgba(0, 0, 0, 0.4);
+      text-align: center;
+    }
+    .h1-solid, .h1-pulse {
+      transition: box-shadow 0.5s ease-in-out;
+    }
+    .h1-solid {
+      box-shadow: 0 0 50px rgba(255, 255, 255, 1)
+    }
+    .h1-pulse {
+      animation: pulse 2s infinite;
+      transition: background-color 0.3s ease;
+    }
+    .h1-pulse:hover {
+      background-color: #007bff;
+    }
+    &::-webkit-scrollbar {
+      display: none; /* For Chrome, Safari, and Opera */
+    }
+  }
+
+  
+  .react-pdf__Document {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .react-pdf__Page {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    canvas {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+  .pdf-summary {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, opacity 0.5s ease;
+    padding: 0 20px; // Add padding for aesthetic purposes, adjust as needed
+  
+    &.expanded {
+      max-height: 200px; // Adjust based on the expected height of your content, but not too high
+      padding: 30px; // Restore padding when expanded
+      opacity: 1;
+      text-align: center;
+      font-size: 110%;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }

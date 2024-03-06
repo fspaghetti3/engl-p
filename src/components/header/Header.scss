@@ -1,0 +1,57 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 25px;
+    gap: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3),
+      inset 0px 2px 1px rgba(255, 255, 255, 0.3),
+      inset 0px -2px 1px rgba(0, 0, 0, 0.4);
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Make the navbar fill the entire width of the header */
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    width: 100%;
+  }
+  
+  .navigation ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Make the list a flex container to align items */
+    justify-content: flex-start; /* Align items to the start */
+  }
+  
+  
+
+  .navigation .pdf-buttons {
+    display: flex;
+  justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .header button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent; // Make background transparent initially
+    color: white;
+    transition: background-color 0.3s ease; // Smooth transition for background color
+    flex-grow: 1; /* Make buttons grow to fill available space */
+
+  
+    &:hover {
+      background-color: #007bff; // Change to shade of blue on hover
+    }
+  }
